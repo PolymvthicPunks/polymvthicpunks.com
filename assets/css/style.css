@@ -21,7 +21,7 @@
     --glitch-1: #ff0040;
     --glitch-2: #00ff41;
     --glitch-3: #0066ff;
-    --spacing-unit: 32px; /* PIXEL PERFECT SPACING - adjust this one value to change all spacing */
+    --spacing-unit: 32px;
 }
 
 * {
@@ -81,7 +81,7 @@ body::before {
     padding: 1rem 0;
     background: rgba(10, 10, 10, 0.9);
     backdrop-filter: blur(10px);
-    margin-bottom: 0; /* Remove any margin */
+    margin-bottom: 0;
 }
 
 .nav {
@@ -134,24 +134,24 @@ body::before {
     width: 100%;
 }
 
-/* Main Content - UNIFORM SPACING */
+/* Main Content */
 .main {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-unit); /* Uniform spacing between all sections */
-    padding: var(--spacing-unit) 0; /* Uniform top and bottom padding */
-    align-content: start; /* Align to top instead of center */
+    gap: var(--spacing-unit);
+    padding: var(--spacing-unit) 0;
+    align-content: start;
 }
 
 .hero {
     text-align: center;
-    padding: 0; /* Remove all padding */
-    margin: 0; /* Remove all margin */
+    padding: 0;
+    margin: 0;
 }
 
 .logo-container {
-    margin: 0; /* Remove all margin */
-    padding: 0; /* Remove all padding */
+    margin: 0;
+    padding: 0;
 }
 
 .hero-logo {
@@ -184,13 +184,10 @@ body::before {
     image-rendering: auto;
 }
 
-/* Responsive logo switching */
+/* Keep logo visible on mobile, just scale it down */
 @media (max-width: 768px) {
     .png-logo {
-        display: none;
-    }
-    .text-logo {
-        display: block;
+        max-width: 90%;
     }
 }
 
@@ -243,20 +240,11 @@ body::before {
     75% { transform: translate(-2px, 0); }
 }
 
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .terminal-window {
     background: var(--bg-darker);
     border: 3px solid var(--border-primary);
     border-radius: 0;
-    margin: 0; /* Remove all margin - spacing controlled by grid gap */
+    margin: 0;
     overflow: hidden;
 }
 
@@ -293,6 +281,7 @@ body::before {
     padding: 1rem;
     font-size: 0.9rem;
     line-height: 1.6;
+    overflow-x: auto;
 }
 
 .command-line {
@@ -317,8 +306,8 @@ body::before {
 
 .cta-section {
     text-align: center;
-    padding: 0; /* Remove padding - spacing controlled by grid gap */
-    margin: 0; /* Remove margin */
+    padding: 0;
+    margin: 0;
 }
 
 .btn {
@@ -351,13 +340,13 @@ body::before {
 
 /* Team Section */
 .team-section {
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin - spacing controlled by grid gap */
+    padding: 0;
+    margin: 0;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--spacing-unit); /* Uniform spacing */
+    margin-bottom: var(--spacing-unit);
 }
 
 .section-title {
@@ -369,9 +358,9 @@ body::before {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-unit); /* Uniform spacing */
-    margin-bottom: var(--spacing-unit); /* Uniform spacing */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit);
 }
 
 .team-member {
@@ -420,7 +409,6 @@ body::before {
     min-width: 0;
 }
 
-/* Show pixel avatar when image loads, hide fallback */
 .pixel-avatar:not([src]),
 .pixel-avatar[src=""] {
     display: none;
@@ -429,12 +417,6 @@ body::before {
 .pixel-avatar:not([src]) + .avatar-fallback,
 .pixel-avatar[src=""] + .avatar-fallback {
     display: flex;
-}
-
-.member-info {
-    flex: 1;
-    min-width: 0;
-    overflow: hidden;
 }
 
 .member-name {
@@ -484,7 +466,7 @@ body::before {
 }
 
 .team-manifesto {
-    margin-top: 0; /* Remove margin */
+    margin-top: 0;
 }
 
 /* Footer */
@@ -495,47 +477,45 @@ body::before {
     font-size: 0.8rem;
     color: var(--text-secondary);
     background: rgba(10, 10, 10, 0.9);
-    margin-top: var(--spacing-unit); /* Uniform spacing before footer */
+    margin-top: var(--spacing-unit);
 }
 
-/* Responsive */
+/* Mobile: Keep desktop look, just make it scrollable */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
     .nav {
-        flex-direction: column;
-        text-align: center;
+        gap: 0.75rem;
     }
-
+    
     .nav-links {
-        flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
+        font-size: 0.85rem;
     }
-
+    
+    /* Allow horizontal scroll on terminal if needed */
     .terminal-content {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Very small screens - minimal adjustments */
+@media (max-width: 480px) {
+    .terminal-content {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+    
+    .nav-links {
         font-size: 0.8rem;
-    }
-
-    .team-member {
-        flex-direction: column;
-        text-align: center;
         gap: 1rem;
-        align-items: center;
-    }
-
-    .avatar-container {
-        align-self: center;
-    }
-
-    .member-info {
-        text-align: center;
-        align-items: center;
-    }
-
-    .member-stats {
-        align-items: center;
-    }
-
-    .stat {
-        justify-content: center;
     }
 }
 
