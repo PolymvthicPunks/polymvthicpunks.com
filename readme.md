@@ -29,7 +29,7 @@ We work with purpose-driven clients who love what they do and think from first p
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/polymvthicpunks.com.git
+git clone https://github.com/PolymvthicPunks/polymvthicpunks.com.git
 
 # Navigate to directory
 cd polymvthicpunks.com
