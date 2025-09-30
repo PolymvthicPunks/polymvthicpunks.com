@@ -5,7 +5,7 @@ Official website for POLYMVTHIC PUNKS - a two-person consultancy built on latera
 ## What We Do
 
 - Web & Graphic Design
-- Branding & Development
+- Branding & Development 
 - Privacy & Operational Security
 - Networking & Cybersecurity
 - Marketing
