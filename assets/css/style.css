@@ -471,14 +471,17 @@ body::before {
 
 /* Footer */
 footer {
-    border-top: 1px solid var(--border-primary);
+    border-top: 1px solid #333;
     padding: 2rem 0 3rem 0;
     text-align: center;
     font-size: 0.8rem;
     color: var(--text-secondary);
     background: rgba(10, 10, 10, 0.9);
     margin-top: var(--spacing-unit);
-    width: 100%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer-main {
