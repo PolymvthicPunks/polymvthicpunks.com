@@ -471,13 +471,14 @@ body::before {
 
 /* Footer */
 .footer {
-    border-top: 3px solid var(--border-primary);
-    padding: 1rem 0;
+    border-top: 1px solid var(--border-primary);
+    padding: 2rem 0 3rem 0;
     text-align: center;
     font-size: 0.8rem;
     color: var(--text-secondary);
     background: rgba(10, 10, 10, 0.9);
     margin-top: var(--spacing-unit);
+    width: 100%;
 }
 
 .footer-main {
@@ -490,7 +491,7 @@ body::before {
 .footer-copyleft {
     font-size: 0.7rem;
     color: #b0b0b0;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .copyleft-symbol {
@@ -506,10 +507,11 @@ body::before {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .social-icons a {
-    color: var(--text-primary);
+    color: #e0e0e0;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-flex;
@@ -526,21 +528,6 @@ body::before {
     width: 20px;
     height: 20px;
     fill: currentColor;
-}
-
-@media (max-width: 768px) {
-    .footer-main {
-        font-size: 0.65rem;
-    }
-
-    .footer-copyleft {
-        font-size: 0.6rem;
-    }
-
-    .social-icons svg {
-        width: 18px;
-        height: 18px;
-    }
 }
 
 /* Mobile: Keep desktop look, just make it scrollable */
