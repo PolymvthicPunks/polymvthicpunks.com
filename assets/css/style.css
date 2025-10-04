@@ -480,6 +480,69 @@ body::before {
     margin-top: var(--spacing-unit);
 }
 
+.footer-main {
+    font-size: 0.75rem;
+    color: var(--primary-green);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.footer-copyleft {
+    font-size: 0.7rem;
+    color: #b0b0b0;
+    margin-bottom: 16px;
+}
+
+.copyleft-symbol {
+    display: inline-block;
+    transform: scaleX(-1);
+    font-size: 1.1em;
+    color: var(--primary-green);
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a:hover {
+    color: var(--primary-green);
+    transform: translateY(-3px);
+}
+
+.social-icons svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+@media (max-width: 768px) {
+    .footer-main {
+        font-size: 0.65rem;
+    }
+
+    .footer-copyleft {
+        font-size: 0.6rem;
+    }
+
+    .social-icons svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 /* Mobile: Keep desktop look, just make it scrollable */
 @media (max-width: 768px) {
     .container {
