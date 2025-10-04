@@ -184,6 +184,13 @@ body::before {
     image-rendering: auto;
 }
 
+/* Keep logo visible on mobile, just scale it down */
+@media (max-width: 768px) {
+    .png-logo {
+        max-width: 90%;
+    }
+}
+
 .glitch {
     position: relative;
     animation: glitch 2s infinite;
@@ -467,164 +474,16 @@ body::before {
     border-top: 3px solid var(--border-primary);
     padding: 1rem 0;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    background: rgba(10, 10, 10, 0.5);
-    margin-top: var(--spacing-xl);
+    background: rgba(10, 10, 10, 0.9);
+    margin-top: var(--spacing-unit);
 }
 
-.footer-main {
-    font-size: 0.75rem;
-    color: var(--primary-green);
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
-
-.footer-copyleft {
-    font-size: 0.7rem;
-    color: #b0b0b0;
-    margin-bottom: 16px;
-}
-
-.copyleft-symbol {
-    display: inline-block;
-    transform: scaleX(-1);
-    font-size: 1.1em;
-    color: var(--primary-green);
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.social-icons a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icons a:hover {
-    color: var(--primary-green);
-    transform: translateY(-3px);
-}
-
-.social-icons svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-}
-
-@media (max-width: 768px) {
-    .footer-main {
-        font-size: 0.65rem;
-    }
-
-    .footer-copyleft {
-        font-size: 0.6rem;
-    }
-
-    .social-icons {
-        gap: 16px;
-    }
-
-    .social-icons svg {
-        width: 18px;
-        height: 18px;
-    }
-}/* Footer */
-.footer {
-    border-top: 3px solid var(--border-primary);
-    padding: 1rem 0;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    background: rgba(10, 10, 10, 0.5);
-    margin-top: var(--spacing-xl);
-}
-
-.footer-main {
-    font-size: 0.75rem;
-    color: var(--primary-green);
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-}
-
-.footer-copyleft {
-    font-size: 0.7rem;
-    color: #b0b0b0;
-    margin-bottom: 16px;
-}
-
-.copyleft-symbol {
-    display: inline-block;
-    transform: scaleX(-1);
-    font-size: 1.1em;
-    color: var(--primary-green);
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.social-icons a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-icons a:hover {
-    color: var(--primary-green);
-    transform: translateY(-3px);
-}
-
-.social-icons svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-}
-
-@media (max-width: 768px) {
-    .footer-main {
-        font-size: 0.65rem;
-    }
-
-    .footer-copyleft {
-        font-size: 0.6rem;
-    }
-
-    .social-icons {
-        gap: 16px;
-    }
-
-    .social-icons svg {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-/* Mobile: Scale logo down, keep it visible */
+/* Mobile: Keep desktop look, just make it scrollable */
 @media (max-width: 768px) {
     .container {
         padding: 0 0.75rem;
-    }
-    
-    /* Scale PNG logo down on mobile but keep it visible */
-    .png-logo {
-        max-width: 80%;
     }
     
     .nav {
@@ -636,6 +495,7 @@ body::before {
         font-size: 0.85rem;
     }
     
+    /* Allow horizontal scroll on terminal if needed */
     .terminal-content {
         font-size: 0.75rem;
         padding: 0.75rem;
@@ -646,13 +506,8 @@ body::before {
     }
 }
 
-/* Very small screens */
+/* Very small screens - minimal adjustments */
 @media (max-width: 480px) {
-    /* Scale logo even more on very small screens */
-    .png-logo {
-        max-width: 70%;
-    }
-    
     .terminal-content {
         font-size: 0.7rem;
         padding: 0.5rem;
